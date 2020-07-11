@@ -7,8 +7,9 @@ import DrawerMenu from "./DrawerMenu"
 const MenuItems = ({ children, link }) => (
   <GatsbyLink to={link}>
     <Text
+      className="norwester"
       mt={{ base: 4, md: 0 }}
-      mr={6}
+      ml={[2, 3, 3, 6]}
       display="block"
       fontSize={["0px", "0px", "15px", "18px"]}
     >
@@ -50,6 +51,7 @@ const Header = props => {
               textUnderlinePosition: "none",
             }}
             fontSize={["sm", "md", "lg", "xl"]}
+            className="norwester"
           >
             Jacobs Creek{" "}
             <Box as="br" display={["block", "block", "none", "none"]} />

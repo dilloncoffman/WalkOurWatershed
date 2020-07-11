@@ -8,7 +8,7 @@ const Footer = ({ siteTitle }) => (
     alignItems="center"
     flexDirection="column"
     mt="1.25rem"
-    fontSize={["15px", "md", "lg", "xl"]}
+    fontSize={["15px", "sm", "sm", "sm"]}
   >
     <Text>
       {siteTitle} © {new Date().getFullYear()}
