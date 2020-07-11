@@ -1,12 +1,17 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { Link as GatsbyLink } from "gatsby"
-import { Box, Heading, Flex, Icon, Text, PseudoBox } from "@chakra-ui/core"
+import { Box, Flex, Icon, Text, PseudoBox } from "@chakra-ui/core"
 import DrawerMenu from "./DrawerMenu"
 
 const MenuItems = ({ children, link }) => (
   <GatsbyLink to={link}>
-    <Text mt={{ base: 4, md: 0 }} mr={6} display="block">
+    <Text
+      mt={{ base: 4, md: 0 }}
+      mr={6}
+      display="block"
+      fontSize={["0px", "0px", "15px", "18px"]}
+    >
       {children}
     </Text>
   </GatsbyLink>
@@ -35,21 +40,21 @@ const Header = props => {
         {...props}
       >
         <Flex align="center" mr={5}>
-          <Heading as="h1" size="lg" letterSpacing={"-.1rem"} m={0}>
-            <PseudoBox
-              as={GatsbyLink}
-              to="/"
-              style={{
-                color: "white",
-                textDecoration: "none",
-                textShadow: "none",
-                textUnderlinePosition: "none",
-              }}
-              fontSize={["sm", "md", "xl", "2xl"]}
-            >
-              {props.siteTitle}
-            </PseudoBox>
-          </Heading>
+          <PseudoBox
+            as={GatsbyLink}
+            to="/"
+            style={{
+              color: "white",
+              textDecoration: "none",
+              textShadow: "none",
+              textUnderlinePosition: "none",
+            }}
+            fontSize={["sm", "md", "lg", "xl"]}
+          >
+            Jacobs Creek{" "}
+            <Box as="br" display={["block", "block", "none", "none"]} />
+            Watershed Association
+          </PseudoBox>
         </Flex>
         <Box
           justifyContent="flex-end"
@@ -59,15 +64,27 @@ const Header = props => {
           flexGrow={1}
         >
           <MenuItems link="/">
-            <Icon name="home" mr="15px" size="30px" />
+            <Icon
+              name="home"
+              mr="15px"
+              fontSize={["0px", "20px", "20px", "30px"]}
+            />
             Home
           </MenuItems>
           <MenuItems link="/log-miles">
-            <Icon name="logMiles" mr="15px" size="30px" />
+            <Icon
+              name="logMiles"
+              mr="15px"
+              fontSize={["0px", "20px", "20px", "30px"]}
+            />
             Log Miles
           </MenuItems>
           <MenuItems link="/register">
-            <Icon name="register" mr="15px" size="30px" />
+            <Icon
+              name="register"
+              mr="15px"
+              fontSize={["0px", "20px", "20px", "30px"]}
+            />
             Register
           </MenuItems>
         </Box>

@@ -27,6 +27,8 @@ const DrawerMenu = () => {
         aria-label="Open navigation menu"
         icon="menu"
         onClick={onOpen}
+        height={["2rem", "2rem", "0px", "0px"]}
+        minW={["2rem", "2rem", "0px", "0px"]}
       />
       <Drawer placement={placement} onClose={onClose} isOpen={isOpen}>
         <DrawerOverlay />

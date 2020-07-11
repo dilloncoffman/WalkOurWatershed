@@ -30,7 +30,9 @@ const Layout = ({ children }) => {
             padding: `0 1.0875rem 1.45rem`,
           }}
         >
-          <main style={{ paddingTop: 85 }}>{children}</main>
+          <Box as="main" paddingTop={[120, 120, 110, 110]}>
+            {children}
+          </Box>
         </div>
         <Footer siteTitle="Jacobs Creek Watershed Association" />
       </Box>
