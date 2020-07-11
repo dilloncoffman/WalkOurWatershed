@@ -1,13 +1,15 @@
 import React from "react"
 import PropTypes from "prop-types"
-import { Link } from "gatsby"
-import { Box, Heading, Flex, Text } from "@chakra-ui/core"
+import { Link as GatsbyLink } from "gatsby"
+import { Box, Heading, Flex, Icon, Text, PseudoBox } from "@chakra-ui/core"
 import DrawerMenu from "./DrawerMenu"
 
-const MenuItems = ({ children }) => (
-  <Text color="red" mt={{ base: 4, md: 0 }} mr={6} display="block">
-    {children}
-  </Text>
+const MenuItems = ({ children, link }) => (
+  <GatsbyLink to={link}>
+    <Text mt={{ base: 4, md: 0 }} mr={6} display="block">
+      {children}
+    </Text>
+  </GatsbyLink>
 )
 
 const Header = props => {
@@ -34,7 +36,8 @@ const Header = props => {
       >
         <Flex align="center" mr={5}>
           <Heading as="h1" size="lg" letterSpacing={"-.1rem"} m={0}>
-            <Link
+            <PseudoBox
+              as={GatsbyLink}
               to="/"
               style={{
                 color: "white",
@@ -42,21 +45,31 @@ const Header = props => {
                 textShadow: "none",
                 textUnderlinePosition: "none",
               }}
+              fontSize={["sm", "md", "xl", "2xl"]}
             >
               {props.siteTitle}
-            </Link>
+            </PseudoBox>
           </Heading>
         </Flex>
         <Box
           justifyContent="flex-end"
-          display={{ sm: "none", md: "flex" }}
+          display={{ base: "none", sm: "none", md: "flex" }}
           width={{ sm: "full", md: "auto" }}
           alignItems="center"
           flexGrow={1}
         >
-          <MenuItems>Home</MenuItems>
-          <MenuItems>Log Miles</MenuItems>
-          <MenuItems>Register</MenuItems>
+          <MenuItems link="/">
+            <Icon name="home" mr="15px" size="30px" />
+            Home
+          </MenuItems>
+          <MenuItems link="/log-miles">
+            <Icon name="logMiles" mr="15px" size="30px" />
+            Log Miles
+          </MenuItems>
+          <MenuItems link="/register">
+            <Icon name="register" mr="15px" size="30px" />
+            Register
+          </MenuItems>
         </Box>
         <Box display={{ sm: "block", md: "none" }}>
           <DrawerMenu />

@@ -58,8 +58,6 @@ const DrawerMenu = () => {
                   bg: "gray.200",
                   boxShadow: "outline",
                   borderRadius: 5,
-                  backgroundImage:
-                    "linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) 1px, #B3DEFF 1px, #B3DEFF 2px, rgba(0, 0, 0, 0) 20px)",
                   color: "#004173",
                 }}
               >
@@ -71,7 +69,7 @@ const DrawerMenu = () => {
               <PseudoBox
                 py={2}
                 as={GatsbyLink}
-                to="/about"
+                to="/log-miles"
                 color="#001626"
                 _hover={{ bg: "gray.200", borderRadius: 5, color: "#004173" }}
                 _focus={{
@@ -79,20 +77,18 @@ const DrawerMenu = () => {
                   bg: "gray.200",
                   boxShadow: "outline",
                   borderRadius: 5,
-                  backgroundImage:
-                    "linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) 1px, #B3DEFF 1px, #B3DEFF 2px, rgba(0, 0, 0, 0) 20px)",
-                  color: "#B3D004173EFF",
+                  color: "#004173",
                 }}
               >
                 <Box px={4}>
-                  <Icon name="phone" mr="15px" size="30px" />
+                  <Icon name="logMiles" mr="15px" size="30px" />
                   Log Miles
                 </Box>
               </PseudoBox>
               <PseudoBox
                 py={2}
                 as={GatsbyLink}
-                to="/music"
+                to="/register"
                 color="#001626"
                 _hover={{ bg: "gray.200", borderRadius: 5, color: "#004173" }}
                 _focus={{
@@ -100,13 +96,11 @@ const DrawerMenu = () => {
                   bg: "gray.200",
                   boxShadow: "outline",
                   borderRadius: 5,
-                  backgroundImage:
-                    "linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) 1px, #B3DEFF 1px, #B3DEFF 2px, rgba(0, 0, 0, 0) 20px)",
                   color: "#004173",
                 }}
               >
                 <Box px={4}>
-                  <Icon name="phone" mr="15px" size="30px" />
+                  <Icon name="register" mr="15px" size="30px" />
                   Register
                 </Box>
               </PseudoBox>

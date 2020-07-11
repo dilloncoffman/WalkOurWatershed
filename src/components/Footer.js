@@ -11,7 +11,7 @@ const Footer = ({ siteTitle }) => (
     fontSize={["sm", "md", "lg", "xl"]}
   >
     {siteTitle} © {new Date().getFullYear()}
-    <Box>
+    <Box mb="1.25rem">
       Developed by {` `}
       <Link href="https://www.dilloncoffman.com/" isExternal>
         Dillon Coffman
