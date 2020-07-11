@@ -1,7 +1,7 @@
 import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { Avatar, Box, Heading, Text, Stack } from "@chakra-ui/core"
+import { Heading } from "@chakra-ui/core"
 
 const IndexPage = () => (
   <Layout>
