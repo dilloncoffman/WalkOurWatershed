@@ -3,13 +3,13 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import BackgroundImage from "gatsby-background-image"
 import { graphql } from "gatsby"
-import { Box, Text } from "@chakra-ui/core"
+import { Box, Progress, Text, SimpleGrid } from "@chakra-ui/core"
 
 const IndexPage = ({ data }) => (
   <Layout>
     <SEO title="Home" />
     <BackgroundImage
-      className="masthead"
+      className="hero-container"
       fluid={data.indexImage.childImageSharp.fluid}
     >
       <Box className="black-overlay">
@@ -35,6 +35,40 @@ const IndexPage = ({ data }) => (
         </Box>
       </Box>
     </BackgroundImage>
+    <SimpleGrid columns={[1, null, 2]} spacing={0}>
+      <Box bg="teal.200" height="200px">
+        <Box px={10} pt={2} textAlign="center">
+          <Text fontWeight="bold" color="white" fontSize={[30, 40]}>
+            Total Raised
+          </Text>
+          <Text fontWeight="bold" color="white" fontSize="70px">
+            $505
+          </Text>
+        </Box>
+      </Box>
+      <Box bg="teal.400" height="200px">
+        <Box px={10} pt={[5, 5, 5, 5]} fontSize={[30]} textAlign="center">
+          <Text pb={2} fontWeight="bold" color="white">
+            Progress to our $1,000 goal:
+          </Text>
+          <Progress
+            color="teal"
+            height={["50px", "60px", "60px", "100px"]}
+            value={60}
+          />
+        </Box>
+      </Box>
+    </SimpleGrid>
+    <Box mt={5} bg="teal.200" height="200px">
+      <Box px={10} pt={2} textAlign="center">
+        <Text fontWeight="bold" color="white" fontSize={[30, 40]}>
+          Total Miles Walked
+        </Text>
+        <Text fontWeight="bold" color="white" fontSize="70px">
+          1123
+        </Text>
+      </Box>
+    </Box>
   </Layout>
 )
 

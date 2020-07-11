@@ -8,7 +8,7 @@ import { ThemeProvider } from "emotion-theming"
 import theme from "../../theme"
 import Footer from "./Footer"
 
-import "../css/background-image.css"
+import "../css/layout.css"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
