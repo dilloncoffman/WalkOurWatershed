@@ -35,13 +35,11 @@ const DrawerMenu = () => {
         <DrawerContent>
           <DrawerCloseButton
             mt="6px"
-            _hover={{ bg: "gray.200", borderRadius: 5, color: "#004173" }}
+            _hover={{ color: "green.400" }}
             _focus={{
               outline: "none",
-              bg: "gray.200",
               boxShadow: "outline",
               borderRadius: 5,
-              color: "#004173",
             }}
           />
           <DrawerHeader borderBottomWidth="1px">
@@ -54,13 +52,12 @@ const DrawerMenu = () => {
                 as={GatsbyLink}
                 to="/"
                 color="#001626"
-                _hover={{ bg: "gray.200", borderRadius: 5, color: "#004173" }}
+                _hover={{ color: "green.400" }}
                 _focus={{
                   outline: "none",
-                  bg: "gray.200",
                   boxShadow: "outline",
                   borderRadius: 5,
-                  color: "#004173",
+                  color: "green.400",
                 }}
               >
                 <Box px={4}>
@@ -73,13 +70,12 @@ const DrawerMenu = () => {
                 as={GatsbyLink}
                 to="/log-miles"
                 color="#001626"
-                _hover={{ bg: "gray.200", borderRadius: 5, color: "#004173" }}
+                _hover={{ color: "green.400" }}
                 _focus={{
                   outline: "none",
-                  bg: "gray.200",
                   boxShadow: "outline",
                   borderRadius: 5,
-                  color: "#004173",
+                  color: "green.400",
                 }}
               >
                 <Box px={4}>
@@ -92,13 +88,12 @@ const DrawerMenu = () => {
                 as={GatsbyLink}
                 to="/register"
                 color="#001626"
-                _hover={{ bg: "gray.200", borderRadius: 5, color: "#004173" }}
+                _hover={{ color: "green.400" }}
                 _focus={{
                   outline: "none",
-                  bg: "gray.200",
                   boxShadow: "outline",
                   borderRadius: 5,
-                  color: "#004173",
+                  color: "green.400",
                 }}
               >
                 <Box px={4}>

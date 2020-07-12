@@ -1,5 +1,5 @@
 import React from "react"
-import { Flex, Link, Text } from "@chakra-ui/core"
+import { Flex, Link, Text, PseudoBox } from "@chakra-ui/core"
 
 const Footer = ({ siteTitle }) => (
   <Flex
@@ -15,9 +15,14 @@ const Footer = ({ siteTitle }) => (
     </Text>
     <Text mb="1.25rem">
       Developed by {` `}
-      <Link href="https://www.dilloncoffman.com/" isExternal>
+      <PseudoBox
+        as={Link}
+        href="https://www.dilloncoffman.com/"
+        _hover={{ bg: "gray.200", borderRadius: 5, color: "green.400" }}
+        isExternal
+      >
         Dillon Coffman
-      </Link>{" "}
+      </PseudoBox>{" "}
     </Text>
   </Flex>
 )

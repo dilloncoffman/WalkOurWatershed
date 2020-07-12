@@ -62,7 +62,7 @@ const IndexPage = ({ data }) => (
     <Box mt={5} bg="teal.200" height="200px">
       <Box px={10} pt={2} textAlign="center">
         <Text fontWeight="bold" color="white" fontSize={[30, 40]}>
-          Total Miles Walked
+          Total Miles Covered
         </Text>
         <Text fontWeight="bold" color="white" fontSize="70px">
           1123

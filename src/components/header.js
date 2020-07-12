@@ -5,7 +5,7 @@ import { Box, Flex, Icon, Text, PseudoBox } from "@chakra-ui/core"
 import DrawerMenu from "./DrawerMenu"
 
 const MenuItems = ({ children, link }) => (
-  <GatsbyLink to={link}>
+  <PseudoBox as={GatsbyLink} to={link} _hover={{ color: "green.400" }}>
     <Text
       className="norwester"
       mt={{ base: 4, md: 0 }}
@@ -15,14 +15,13 @@ const MenuItems = ({ children, link }) => (
     >
       {children}
     </Text>
-  </GatsbyLink>
+  </PseudoBox>
 )
 
 const Header = props => {
   return (
     <header
       style={{
-        backgroundColor: "blue",
         marginBottom: `1.45rem`,
         position: "fixed",
         right: 0,
@@ -36,8 +35,8 @@ const Header = props => {
         justify="space-between"
         wrap="wrap"
         padding="1rem"
-        bg="slate.800"
-        color="white"
+        bg="white"
+        color="black"
         {...props}
       >
         <Flex align="center" mr={5}>
@@ -45,13 +44,20 @@ const Header = props => {
             as={GatsbyLink}
             to="/"
             style={{
-              color: "white",
               textDecoration: "none",
               textShadow: "none",
               textUnderlinePosition: "none",
             }}
             fontSize={["sm", "md", "lg", "xl"]}
+            color="slate.800"
             className="norwester"
+            _hover={{ color: "green.400" }}
+            _focus={{
+              outline: "none",
+              boxShadow: "outline",
+              borderRadius: 5,
+              color: "green.400",
+            }}
           >
             Jacobs Creek{" "}
             <Box as="br" display={["block", "block", "none", "none"]} />
@@ -64,6 +70,7 @@ const Header = props => {
           width={{ sm: "full", md: "auto" }}
           alignItems="center"
           flexGrow={1}
+          color="slate.800"
         >
           <MenuItems link="/">
             <Icon
