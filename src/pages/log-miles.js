@@ -3,7 +3,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { AspectRatioBox, Box } from "@chakra-ui/core"
 
-const IndexPage = () => (
+const LogMilesPage = () => (
   <Layout>
     <SEO title="Log Miles" />
     <AspectRatioBox
@@ -22,4 +22,4 @@ const IndexPage = () => (
   </Layout>
 )
 
-export default IndexPage
+export default LogMilesPage
