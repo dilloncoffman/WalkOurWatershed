@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from "react"
+import React, { useEffect, memo } from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { Box } from "@chakra-ui/core"
 
-const RegisterPage = () => {
+const RegisterPage = memo(() => {
   useEffect(() => {
     // Eventbrite code is loaded and embedded using the gatsby-plugin-load-script to load the static eventbrite.js file which appends the first script tag from the Eventbrite embed code to the <body>, that first script tag makes EBWidgets available to be used here
     // Loading this code in the useEffect() ensures these scripts aren't loaded until users navigate to the /register page which could present problems, see the following link:
@@ -39,6 +39,6 @@ const RegisterPage = () => {
       ></Box>
     </Layout>
   )
-}
+})
 
 export default RegisterPage
