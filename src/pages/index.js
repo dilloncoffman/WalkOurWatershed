@@ -2,8 +2,8 @@ import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import BackgroundImage from "gatsby-background-image"
-import { graphql } from "gatsby"
-import { Box, Progress, Text, SimpleGrid } from "@chakra-ui/core"
+import { graphql, Link as GatsbyLink } from "gatsby"
+import { Box, Progress, Text, SimpleGrid, PseudoBox } from "@chakra-ui/core"
 
 const IndexPage = ({ data }) => (
   <Layout>
@@ -68,6 +68,27 @@ const IndexPage = ({ data }) => (
           1123
         </Text>
       </Box>
+    </Box>
+    <Box className="norwester" my={10} textAlign="center">
+      <PseudoBox
+        as={GatsbyLink}
+        to="/register"
+        backgroundColor="yellow.400"
+        borderRadius={5}
+        color="white"
+        padding={3}
+        px={10}
+        _hover={{ backgroundColor: "green.400", color: "gray.100" }}
+        _focus={{
+          outline: "none",
+          boxShadow: "outline",
+          borderRadius: 5,
+          backgroundColor: "green.400",
+          color: "gray.100",
+        }}
+      >
+        Register Here
+      </PseudoBox>
     </Box>
   </Layout>
 )

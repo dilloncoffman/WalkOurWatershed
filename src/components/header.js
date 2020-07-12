@@ -5,7 +5,17 @@ import { Box, Flex, Icon, Text, PseudoBox } from "@chakra-ui/core"
 import DrawerMenu from "./DrawerMenu"
 
 const MenuItems = ({ children, link }) => (
-  <PseudoBox as={GatsbyLink} to={link} _hover={{ color: "green.400" }}>
+  <PseudoBox
+    as={GatsbyLink}
+    to={link}
+    _hover={{ color: "green.400" }}
+    _focus={{
+      color: "green.400",
+      outline: "none",
+      boxShadow: "outline",
+      borderRadius: 5,
+    }}
+  >
     <Text
       className="norwester"
       mt={{ base: 4, md: 0 }}
