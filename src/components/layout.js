@@ -30,7 +30,6 @@ const Layout = ({ children }) => {
         </Box>
         <Footer siteTitle="Jacobs Creek Watershed Association" />
       </Box>
-      <div id="eventbrite-widget-container-113162716732"></div>
     </ThemeProvider>
   )
 }

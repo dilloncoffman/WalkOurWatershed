@@ -2,7 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
 import { useLocation } from "@reach/router"
-import { useStaticQuery, graphql, withPrefix } from "gatsby"
+import { useStaticQuery, graphql } from "gatsby"
 const SEO = ({ title, description, image, article }) => {
   const { pathname } = useLocation()
   const { site } = useStaticQuery(query)
@@ -35,8 +35,6 @@ const SEO = ({ title, description, image, article }) => {
         <meta name="twitter:description" content={seo.description} />
       )}
       {seo.image && <meta name="twitter:image" content={seo.image} />}
-      <script src="https://www.eventbrite.com/static/widgets/eb_widgets.js"></script>
-      <script src={withPrefix("eventbrite.js")} type="text/javascript" />
     </Helmet>
   )
 }
