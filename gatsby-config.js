@@ -1,3 +1,7 @@
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
 module.exports = {
   siteMetadata: {
     title: `Jacobs Creek Watershed Association`,
@@ -48,6 +52,13 @@ module.exports = {
       resolve: "gatsby-plugin-load-script",
       options: {
         src: "/eventbrite.js",
+      },
+    },
+    {
+      resolve: "gatsby-source-google-spreadsheets",
+      options: {
+        spreadsheetId: process.env.GATSBY_GOOGLE_SHEET_ID,
+        apiKey: process.env.GATSBY_GOOGLE_SHEET_API_KEY,
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
