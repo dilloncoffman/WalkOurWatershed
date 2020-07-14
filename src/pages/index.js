@@ -3,10 +3,18 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import BackgroundImage from "gatsby-background-image"
 import { graphql, Link as GatsbyLink } from "gatsby"
-import { Box, Progress, Text, SimpleGrid, PseudoBox } from "@chakra-ui/core"
+import {
+  Box,
+  CircularProgress,
+  Progress,
+  Text,
+  SimpleGrid,
+  PseudoBox,
+} from "@chakra-ui/core"
 
 const IndexPage = ({ data }) => {
   const [eventTotal, setEventTotal] = useState(0)
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     fetch(
@@ -15,6 +23,7 @@ const IndexPage = ({ data }) => {
       .then(response => response.json())
       .then(resultData => {
         setEventTotal(resultData.totals.net)
+        setLoading(false)
       })
   }, [])
 
@@ -73,9 +82,17 @@ const IndexPage = ({ data }) => {
             <Text fontWeight="bold" color="white" fontSize={[30, 40]}>
               Total Raised
             </Text>
-            <Text fontWeight="bold" color="white" fontSize="70px">
-              ${pageData.totalRaised}
-            </Text>
+            {loading ? (
+              <CircularProgress
+                mt={3}
+                isIndeterminate
+                color="teal"
+              ></CircularProgress>
+            ) : (
+              <Text fontWeight="bold" color="white" fontSize="70px">
+                ${pageData.totalRaised}
+              </Text>
+            )}
           </Box>
         </Box>
         <Box bg="teal.400" height="200px">
@@ -83,11 +100,15 @@ const IndexPage = ({ data }) => {
             <Text pb={2} fontWeight="bold" color="white">
               Progress to our $1,000 goal:
             </Text>
-            <Progress
-              color="teal"
-              height={["50px", "60px", "60px", "100px"]}
-              value={pageData.progressToGoal}
-            />
+            {loading ? (
+              <CircularProgress isIndeterminate color="teal"></CircularProgress>
+            ) : (
+              <Progress
+                color="teal"
+                height={["50px", "60px", "60px", "100px"]}
+                value={pageData.progressToGoal}
+              />
+            )}
           </Box>
         </Box>
       </SimpleGrid>
