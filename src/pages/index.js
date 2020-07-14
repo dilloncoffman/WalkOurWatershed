@@ -78,7 +78,7 @@ const IndexPage = ({ data }) => {
       </BackgroundImage>
       <SimpleGrid columns={[1, null, 2]} spacing={0}>
         <Box bg="teal.200" height="200px">
-          <Box px={10} pt={2} textAlign="center">
+          <Box px={[0, 4, 6, 10]} pt={2} textAlign="center">
             <Text fontWeight="bold" color="white" fontSize={[30, 40]}>
               Total Raised
             </Text>

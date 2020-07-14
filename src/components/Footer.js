@@ -1,5 +1,8 @@
 import React from "react"
-import { Flex, Link, Text, PseudoBox } from "@chakra-ui/core"
+import { Box, Flex, Link, Text, PseudoBox } from "@chakra-ui/core"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faLink } from "@fortawesome/free-solid-svg-icons"
+import { faFacebook } from "@fortawesome/free-brands-svg-icons"
 
 const Footer = ({ siteTitle }) => (
   <Flex
@@ -10,6 +13,24 @@ const Footer = ({ siteTitle }) => (
     mt="1.25rem"
     fontSize={["15px", "sm", "sm", "sm"]}
   >
+    <Box mb={8}>
+      <Link
+        href="https://www.facebook.com/jacobscreekwatershed"
+        color="#305479"
+        isExternal
+      >
+        <FontAwesomeIcon icon={faFacebook} size="3x" />
+      </Link>
+      <Link
+        ml={6}
+        href="https://www.jacobscreekwatershed.org/"
+        color="#305479"
+        isExternal
+      >
+        <FontAwesomeIcon icon={faLink} size="3x" />
+      </Link>
+    </Box>
+
     <Text>
       {siteTitle} © {new Date().getFullYear()}
     </Text>
