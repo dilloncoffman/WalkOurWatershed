@@ -113,7 +113,7 @@ const IndexPage = ({ data }) => {
         </Box>
       </SimpleGrid>
       <Box mt={5} bg="teal.200" height="200px">
-        <Box px={10} pt={2} textAlign="center">
+        <Box px={[0, 4, 6, 10]} pt={2} textAlign="center">
           <Text fontWeight="bold" color="white" fontSize={[30, 40]}>
             Total Miles Covered
           </Text>
