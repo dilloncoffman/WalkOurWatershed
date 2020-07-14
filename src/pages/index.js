@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import BackgroundImage from "gatsby-background-image"
@@ -6,11 +6,19 @@ import { graphql, Link as GatsbyLink } from "gatsby"
 import { Box, Progress, Text, SimpleGrid, PseudoBox } from "@chakra-ui/core"
 
 const IndexPage = ({ data }) => {
+  const [eventTotal, setEventTotal] = useState(0)
+
+  useEffect(() => {
+    fetch(
+      `https://www.eventbriteapi.com/v3/organizations/${process.env.GATSBY_EVENTBRITE_ORG}/reports/sales/?date_facet=event_day&event_ids=113162716732&net_sales_consistency=on&token=${process.env.GATSBY_EVENTBRITE_TOKEN}`
+    )
+      .then(response => response.json())
+      .then(resultData => {
+        setEventTotal(resultData.totals.net)
+      })
+  }, [])
+
   const goal = 1000
-  const totalRaised = parseInt(
-    data.allGoogleFormResponses1Sheet.distinct[0],
-    10
-  )
   let pageData = {}
 
   const getTotalMiles = eventRegistrations => {
@@ -26,8 +34,8 @@ const IndexPage = ({ data }) => {
   }
 
   pageData.totalMiles = getTotalMiles(data.allGoogleFormResponses1Sheet.nodes)
-  pageData.totalRaised = totalRaised
-  pageData.progressToGoal = getProgressToGoal(totalRaised)
+  pageData.totalRaised = eventTotal
+  pageData.progressToGoal = getProgressToGoal(eventTotal)
 
   return (
     <Layout>
