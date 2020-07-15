@@ -6,7 +6,7 @@ module.exports = {
   siteMetadata: {
     title: `Jacobs Creek Watershed Association`,
     titleTemplate: `%s | Walk Our Watershed`,
-    description: `Support and explore your local watershed!`,
+    description: `Take a pledge to walk, bike or padding a combined 177 miles. 1 miles for each stream mile in Jacobs Creek Watershed. August 1st to September 30th.`,
     author: `@_dilloncoffman_`,
     siteUrl: `https://walk-our-watershed.netlify.app`,
     url: `https://walk-our-watershed.netlify.app`,

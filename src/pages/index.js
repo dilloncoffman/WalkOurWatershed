@@ -48,7 +48,7 @@ const IndexPage = ({ data }) => {
 
   return (
     <Layout>
-      <SEO title="Home" />
+      <SEO title="Home" image="/../../JCWA-Logo.png" />
       <BackgroundImage
         className="hero-container"
         fluid={data.indexImage.childImageSharp.fluid}
